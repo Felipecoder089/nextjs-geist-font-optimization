@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feliz Aniversário, {{ nickname }}! 💕</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <!-- Floating Hearts Animation -->
+    <div class="hearts-container">
+        <div class="heart heart-1">💖</div>
+        <div class="heart heart-2">💕</div>
+        <div class="heart heart-3">💗</div>
+        <div class="heart heart-4">💝</div>
+        <div class="heart heart-5">💘</div>
+        <div class="heart heart-6">💖</div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Header Section -->
+        <header class="hero-section">
+            <div class="hero-content">
+                <h1 class="main-title">
+                    Feliz Aniversário,<br>
+                    <span class="name-highlight">{{ nickname }}!</span>
+                </h1>
+                <p class="subtitle">Minha {{ nickname2 }} linda 💕</p>
+                <div class="birthday-emoji">🎂✨🎉</div>
+            </div>
+        </header>
+
+        <!-- Love Message Section -->
+        <section class="love-message">
+            <div class="message-card">
+                <h2>Para a pessoa mais especial da minha vida</h2>
+                <p>
+                    Hoje é o dia mais especial do ano, porque é o dia em que a pessoa 
+                    que mais amo nasceu. {{ name }}, você trouxe luz, alegria e amor 
+                    para a minha vida de uma forma que eu nunca imaginei ser possível.
+                </p>
+                <p>
+                    Cada dia ao seu lado é um presente, e hoje eu quero celebrar 
+                    não apenas o seu aniversário, mas também todo o amor que 
+                    compartilhamos juntos. 💕
+                </p>
+            </div>
+        </section>
+
+        <!-- Reasons I Love You -->
+        <section class="reasons-section">
+            <h2>Algumas das milhões de razões pelas quais eu te amo:</h2>
+            <div class="reasons-grid">
+                <div class="reason-card" onclick="flipCard(this)">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <span class="reason-emoji">😍</span>
+                            <p>Seu sorriso</p>
+                        </div>
+                        <div class="card-back">
+                            <p>Seu sorriso ilumina meu dia e faz tudo ficar melhor!</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="reason-card" onclick="flipCard(this)">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <span class="reason-emoji">🥰</span>
+                            <p>Seu carinho</p>
+                        </div>
+                        <div class="card-back">
+                            <p>A forma como você me cuida e demonstra amor é única!</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="reason-card" onclick="flipCard(this)">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <span class="reason-emoji">💫</span>
+                            <p>Sua personalidade</p>
+                        </div>
+                        <div class="card-back">
+                            <p>Você é incrível, engraçada e a pessoa mais especial que conheço!</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="reason-card" onclick="flipCard(this)">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <span class="reason-emoji">🌟</span>
+                            <p>Nossos momentos</p>
+                        </div>
+                        <div class="card-back">
+                            <p>Cada momento ao seu lado é especial e inesquecível!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Photo Gallery Placeholder -->
+        <section class="gallery-section">
+            <h2>Nossos momentos especiais 📸</h2>
+            <div class="gallery-grid">
+                <div class="photo-placeholder">
+                    <span>💕</span>
+                    <p>Nossa primeira foto juntos</p>
+                </div>
+                <div class="photo-placeholder">
+                    <span>🌹</span>
+                    <p>Nosso primeiro encontro</p>
+                </div>
+                <div class="photo-placeholder">
+                    <span>🎭</span>
+                    <p>Momentos divertidos</p>
+                </div>
+                <div class="photo-placeholder">
+                    <span>🌅</span>
+                    <p>Nossos planos futuros</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Birthday Wishes -->
+        <section class="wishes-section">
+            <div class="wishes-card">
+                <h2>Meus desejos para você neste novo ano:</h2>
+                <ul class="wishes-list">
+                    <li>💖 Que todos os seus sonhos se realizem</li>
+                    <li>🌟 Que você seja sempre feliz como me faz feliz</li>
+                    <li>🎯 Que alcance todos os seus objetivos</li>
+                    <li>💕 Que nosso amor continue crescendo cada dia mais</li>
+                    <li>🌈 Que sua vida seja cheia de cores e alegria</li>
+                    <li>✨ Que este novo ano seja o melhor de todos</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Final Message -->
+        <section class="final-message">
+            <div class="final-card">
+                <h2>Te amo muito, {{ nickname }}! 💕</h2>
+                <p>
+                    Obrigado por existir e por fazer parte da minha vida. 
+                    Você é o meu presente mais precioso, e hoje eu quero 
+                    celebrar você de todas as formas possíveis.
+                </p>
+                <p class="signature">
+                    Com todo meu amor,<br>
+                    Seu namorado apaixonado 💖
+                </p>
+                <button class="celebration-btn" onclick="celebrate()">
+                    Clique para uma surpresa! 🎉
+                </button>
+            </div>
+        </section>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
